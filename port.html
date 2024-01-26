@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="port.css">
+    <script src="https://kit.fontawesome.com/942a6fa363.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <canvas id="particleCanvas"></canvas>
+        <script src="port.js"></script>
+    <div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/dev.png" class="logo" alt="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Me</a></li>
+                <li><a href="#">Software/Languages</a></li>
+                <li><a href="#">My Work</a></li>
+                <li><a href="#">Contact Me</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p>Hola Amigos!</p>
+    0        <h1>Hi, I'm <span>Kevin Stark</span> <br>from Canada</h1>
+            <p1>A Web developer that is proficient in crafting user
+
+                friendly websites.<br>Skilled in both 2d and 3d designing.</p1>
+        </div>
+        <button id="myButton">know more</button>
+    </div>
+
+        <div class="share-container">
+        <div class="share-button">
+            Invite
+            <div class="Invite-content">
+                <p>Invite a friend to visit Me </p>
+                <input type="text" id="invite-link" value="https://yourwebsite.com/link-to-share" readonly>
+                <button onclick="copyLink()">Copy Link</button>
+                <script>
+                    function copyLink(){
+                        var copyText = document.getElementById("invite-link");
+                        copyText.select();
+                        MediaStreamAudioDestinationNode.execCommand("copy");
+                        alert("Link copied to clipboard: " + copyText.value);
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="invite-icon"><i class="fa-solid fa-circle-nodes"></i></div>
+        </div>
+    <div class="rect" id="rectangle">
+        <div class="line"></div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/kevindestark3d?igsh=MzNINGNkZWQ4Mg==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/+256705176655" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+            <i class="fa-brands fa-x-twitter"></i>
+            <a href="https://www.fb.com/l/61p1kJRRR"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+        <div class="line2"></div>
+    </div>
+</div>
+<div id="about">
+    <div class="container">
+        <div class="raw">
+            <div class="col-1">
+                <div class="rect2" id="rectangle2">
+                    <div class="circles">
+                        <div class="red"></div>
+                        <div class="yellow"></div>
+                        <div class="green"></div>
+                    </div>
+                    <img src="images/_G3A9100.JPG">
+                </div>
+            </div>
+            <div class="col-2">
+                <h1><span class="about-gradient">About Me</span></h1>
+                <div class="box" id="box">
+                <p>👋 I'm Stark, a passionate web developer, 3D designer, and graphics designer based in Canada. With a keen interest in technology and a love for creative expression, I bring a unique blend of skills to the digital realm.<Br>
+                    <Br>
+                    As a web developer, I specialize in crafting seamless and user-friendly websites. I turn innovative ideas into reality, utilizing  programming languages and frameworks to create engaging and responsive online experiences.<Br>
+                        <Br>
+                    In 3D design, I bring reality into three-dimensional worlds. Whether it's modeling, texturing, or animation, I enjoy pushing the boundaries of visual storytelling to create captivating and immersive environments.<Br>
+                    <br>
+                    As a graphics designer, I am dedicated to visually enhancing concepts and ideas. From branding to digital illustrations, I bring a meticulous eye for detail and a passion for aesthetics to every project, ensuring a visually striking and memorable outcome.<Br>
+                        <Br>
+                    My approach to each project is rooted in a combination of technical expertise and artistic flair. I believe in continuous learning, staying abreast of the latest industry trends, and collaborating with clients to bring their visions to fruition.
+                    </p>
+        </div>
+        <div class="tabs">
+            <p id="skills" class="tab-links">skills</p>
+            <p id="experience" class="tab-links">experience</p>
+            <p id="Programing Languages" class="tab-links">Education</p>
+        </div>     
+        <div class="tab-box">
+            <div class="box2">
+                <p> Web development</p>
+                <p> Version control tools (Git)</p>
+                <p> Data management</p>
+                <p> Creative in 3d 2d concepts</p>
+            </div>
+            <div class="box2">
+                <p>2020-2021 <br> <br>Studied 3d concepts and Animations at Kampala Animation School</p>
+                <p>2021-2022 <br> <br>Studied 2d drawing and Visiuals from Online courses</p>
+            </div>
+            <div class="box2">
+                <p>2020-2021 <br> Kampala Animation School</p>
+                <p>2021-2022 <br> Web3 Codejungle online course</p>
+                <p>2022-curent <br> YCI Comprehensive </p>
+            </div>
+        </div>
+        </div> 
+    </div>
+</div>
+<div id="work">
+    <div class="heading">
+    <h1>My Work</h1>
+    </div>
+    <div class="gala">
+        <div class="photo-1"> 
+            <div class="photo-container">
+            <h2>UI/UX Designs</h2>
+            <p>here are a couple of computer ui/ux designs ive came up with over the time showcasing my creativity in creating user friendly interfaces</p>
+            <div class="view-box">
+                <a href="#">view all</a><i class="fa-solid fa-eye"></i>
+                <img src="c:\Users\kevin\Downloads\icons8-figma-480.png" alt="">
+            </div>
+            </div>
+        </div>
+        <div class="photo-2">
+            <div class="photo-container">
+            <h2>2d/3d designs</h2>
+            <p>My collection of both 3d and 2d desings which include Gaphics designs ive been working on from the start.</p>
+             <div class="view-box">
+             <a href="#">view all</a><i class="fa-solid fa-eye"></i>
+             <img src="images/blender_icon _1024x1024.png" alt="">
+            </div>
+            </div>
+        </div>
+        <div class="photo-3">
+            <div class="photo-container">
+            <h2>User Applications</h2>
+            <p>Few collection of applications that ive developed aimimng on solving specific user problems</p>
+            <div class="view-box">
+            <a href="#">view all</a><i class="fa-solid fa-eye"></i>
+            <img src="images/icons8-python-100.png" alt="">
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="contact">
+    <div class="columns">
+        <h1>Lets Chat</h1>
+        <div class="column-1">
+            <div class="boxC">
+                <form action="https://formspree.io/kevinowens989@gmail.com" method="POST">
+       
+            </form>
+            </div>
+            <div class="bottom">
+                <h1>Inspirations</h1>
+                <div class="left">
+                    <h1>3d designing</h1>
+                     <div class="links-a">
+                    <a href="">Blender Guru - Youtube</a>
+                    <a href="">CG Geeks - Youtube</a>
+                </div>
+                </div>
+                <div class="centre">
+                    <h1>Programming</h1> 
+                </div>
+                <p>© 2014 Stark Dev Services. Minds-Project. All rights reserved </p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

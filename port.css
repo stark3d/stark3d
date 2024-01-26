@@ -1,0 +1,580 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    color: aliceblue;
+    overflow: visible;/*particle overflow*/
+}
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/abstract-digital-grid-black-background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+/*positioning the vavigation and logo-----------------------------------*/
+.container{
+    padding: 10px 10%;
+    z-index: 1;/*partcle overflow*/
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.logo{
+    width: 200px;
+}
+/*positioning nav bar------------------------------------------------------*/
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 8px;
+}
+/*decorating nav bar-----------------------------------------------------*/
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+/*navigatin hover effect--------------------------------------------------*/
+/*before---------*/
+nav ul li a::after{
+    content: '';
+    width: 0%;
+    height: 6px;
+    background: rgb(250, 14, 14);
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 1s;
+}
+/*after-------------*/
+nav ul li a:hover::after{
+    width: 100%;
+}
+/*name texts home screen------------*/
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+}
+.header-text h1{
+    font-size: 100px;
+    margin-top: 20px;
+}
+.header-text h1 span{
+    background: linear-gradient(to right, #ffa601, #af01ff);
+    background-clip: text;
+    color: transparent; 
+}
+p1{
+    font-size: 25px;
+}
+/*adding box borders to the nav---------------*/
+li{
+    display: inline-block;
+    margin: 8px;
+    padding: 10px 15px;
+    border: 1px solid #3c746c; /* Border style */
+    border-radius: 20px;
+    border-width: 2px;
+}
+/*home page button----------*/
+#myButton{
+    position: absolute;
+    margin-left: 300px;
+    margin-top: 30px;
+    width: 100px;
+    height: 30px;
+    background-color: #00ffaa;
+    border-radius: 100px;
+    box-shadow: rgba(200, 0, 207, 0.2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.5s ease-in-out; /*zoom and color change*/
+    border: 0;
+    font-size: 16px;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    z-index: 2;
+}
+#myButton:hover{
+    background-color: #00ff62;
+    transform: scale(1.1);
+}
+/*side line rectangle/*/
+.rect{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100px;
+    background-color: rgba(49, 49, 49, 0.5);
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/*aligning social icons home page*/
+.social-icons{
+   align-items: center;
+   display: flex;
+   flex-direction: column;
+   margin-top: 140px;
+}
+/*individual spacing*/
+.social-icons i{
+    overflow: visible;
+    font-size: 24px;
+    margin-bottom: 35px;
+    color: #fff;
+    transition: transform 0.5s ease-out;
+}
+/*shift icons to left*/
+.social-icons i:hover{
+    transform: translateX(-10px);
+    color: #00ffaa;
+}
+.social-icons a{
+    color: inherit;
+    text-decoration: none;
+}
+/*putting lines--------------*/
+.line{
+
+    height: 30%;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent 20%, #5ad0ff 50%, transparent 80%);
+    margin-top: 5px;
+}
+/*second bottom line--------------*/
+.line2{
+    height: 30%;
+    width: 2px;
+    background: linear-gradient(to bottom, transparent 20%, #5ad0ff 50%, transparent 80%);
+    margin-top: 80px;
+}
+/*the share button----------------------------*/
+.share-container{
+    width: 70px; /* Adjust the width and height to create a square */
+    height: 100px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background-color: rgba(86, 93, 131, 0.2);
+}
+.share-button{
+    position: relative;
+    cursor: pointer;
+    color: #fdfdfd;
+}
+.Invite-content{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: rgba(99, 120, 121, 0.5);
+    padding: 10px;
+    z-index: 1;
+    border-radius: 8px;
+    transition: transform 0.5s ease-out;
+}
+.share-button:hover .Invite-content{
+    display: inline;
+}
+/*share icon--------------*/
+.invite-icon{
+    position: absolute;
+    margin-top: 50px;
+    color: #00ff62;
+}
+/*particle overflow*/
+#particleCanvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/*----------------------------------------------about-----------------------------------*/
+#about{
+    color: black;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/a\ \ blue\ cyan\ glowing.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+}
+.raw{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+/*image about  side------------*/
+.col-1{
+    display: flex;
+    flex-basis: 35%;
+    margin-left: -140px;
+    margin-top: 100px;
+}
+.col-1 img{
+    width: 90%;
+    border-radius: 15px;
+}
+.cicles{
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+}
+.red{
+    background-color: red;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-top: -90px;
+    margin-left: -200px;
+}
+.yellow{
+    background-color: rgb(255, 230, 0);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-top: -25px;
+    margin-left: -120px;
+}
+.green{
+    background-color: rgb(51, 255, 0);
+   width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-top: -25px;
+    margin-left: -160px;
+}
+.rect2{
+    position: relative;
+    top: 10;
+    right: 3;
+    height: 60vh;
+    width: 500px;
+    background-color: rgba(64, 110, 103, 0.3);
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+/*about side words-----------------*/
+.col-2{
+    flex-basis: 60%;
+    color: white;
+}
+.col-2 h1{
+    margin-top: 120px;
+}
+.about-gradient{
+    background-image: linear-gradient(to right, #0178ff, #af01ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; 
+}
+/*card with the about me content--------------------------*/
+.box{
+    position: relative;
+    top: 10;
+    right: 3;
+    height: 35vh;
+    width: 850px;
+    background-color: rgba(64, 110, 103, 0.3);
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-size: 15px;
+    margin-top: 50px;
+}
+.box p{
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+    margin: 0 20px;
+}
+/*the tabs in the about section----------------*/
+.tabs{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 0;
+}
+.tab-links{
+    margin-right: 50px;
+    cursor: pointer;
+    position: relative;
+    text-decoration: solid;
+    border-bottom: 4px solid red;
+}
+/*cards for each section----------------------*/
+.tab-box{/*aligning and spacing the boxes*/
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 0;
+}
+/*the box properties-----------*/
+.box2 {
+  width: 280px;
+  height: 300px;
+  background-color: rgba(64, 110, 103, 0.3);
+  border-radius: 20px;
+  transition: transform 0.5s ease;
+}
+
+.box2:hover {
+  transform: scale(1.1);
+}
+.box2 p{
+    text-align: start;
+    margin-top: 40px;
+    margin-left: 10px;
+}
+/*work section ---------------*/
+#work{
+    color: black;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(images/a\ \ yellow\ orange\ glo\ \(1\).jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    margin-top: 38px;
+}
+.heading{
+    position: absolute;
+    justify-content: center;
+}
+.heading h1{
+    margin-left: 800px;
+    margin-top: 45px;
+    background-image: linear-gradient(to right, #01eeff, #01ff23);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; 
+}
+/*making the phpt cards------*/
+.gala{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-left: 180px;
+}
+/*-----------the form of the 3 cards---------*/
+.photo-1{
+    width: 500px;
+    height: 700px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid white;
+    border-radius: 20px;
+    margin-top: 150px;
+    background-image: url(images/File\ Manager\ App\ UX\ UI\ Design.jpeg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+.photo-1 img{
+    position: absolute;
+    width: 300px;
+    margin-top: -300px;
+    margin-left: -50px;
+}
+.photo-1 h2{
+    color: #00ffb3;
+}
+.photo-2 p{
+    margin-top: 12px;
+}
+.photo-2{
+    width: 500px;
+    height: 700px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid white;
+    border-radius: 20px;
+    margin-top: 150px;
+    background-image: url(images/tunnel\ treasure\ sttark\ desighns\ .png);
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+.photo-2 h2{
+    color: #00ffb3;
+}
+.photo-2 p{
+    margin-top: 12px;
+}
+.photo-2 img{
+    position: absolute;
+    width: 300px;
+    margin-top: -300px;
+    margin-left: -50px;
+}
+.photo-3{
+    width: 500px;
+    height: 700px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid white;
+    border-radius: 20px;
+    margin-top: 150px;
+    background-image: url(images/download\ \(4\).jpeg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+.photo-3 h2{
+    color: #00ffb3;
+}
+.photo-container{
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 50px;
+}
+.photo-3 img{
+    position: absolute;
+    width: 300px;
+    margin-top: -300px;
+    margin-left: -50px;
+}
+/*making the button like box for view morre--------------*/
+.view-box{
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    background-color: rgba(2, 255, 36, 0.5);
+    margin-top: 320px;
+    border-radius: 15px;
+    transition: transform 0.5s ease;
+}
+.view-box:hover{
+    transform: scale(1.1);
+    background-color: rgba(2, 255, 234, 0.5);
+}
+.view-box a{
+    text-decoration: none;
+    color: white;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+.view-box i{
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+/*--------------contact-------------*/
+#contact{
+    color: black;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/galaxy-night-panoramic.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+}
+.columns{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+/*---contacts heading*/
+.columns h1{
+    position: absolute;
+    background-image: linear-gradient(to right, #00eeff, #ff0000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; 
+    margin-left: 850px;
+    margin-top: 50px;
+}
+.bottom{
+    display: flex;
+    justify-content: center;
+    color: wheat;
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    background-color: rgb(15, 15, 15);
+    margin-top: 800px;
+}
+.bottom p{
+    margin-top: 150px;
+}
+.bottom h1{
+    color: wheat;
+    font-size: medium;
+    margin-top: 20px;
+    margin-left: -50px;
+}
+/* aligning the bottom setion of the links----*/
+.centre{
+    position: absolute;
+    margin-left: 380px;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+}
+.left h1{
+    margin-left: 30px;
+}
+.links-a{
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    text-decoration: none;
+}
+/*------message card-------------------*/
+.boxC {
+    position: absolute;
+    width: 400px;
+    padding: 20px;
+    background-color: rgba(64, 110, 103, 0.5);
+    margin-left: 70%;
+    border-radius: 10px;
+    margin-top: 140px;
+    color: white;
+}
+.input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: rgba(32, 32, 32, 0.3);
+    color: white;
+}
+.input:focus {
+    outline: none;
+    border-color: #8c03fc;
+}
+.button {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 80px;
+    height: 40px;
+    transition: transform 0.3s ease-in-out;
+}
+.button:hover {
+    opacity: 0.8;
+    transform: scale(1.2);
+}
